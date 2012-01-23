@@ -1,0 +1,14 @@
+%h1 New translation
+- form_for([@locale, @translation]) do |f|
+  = f.error_messages
+  %p
+    = f.label :key
+    %br/
+    = f.text_field :key
+  %p
+    = f.label :value
+    %br/
+    = f.text_field :value
+  %p
+    = f.submit "Create"
+= link_to 'Back', locale_translations_path

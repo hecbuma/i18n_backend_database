@@ -1,0 +1,20 @@
+- form_tag translations_url do
+  = select_tag :locale_id,    options_from_collection_for_select(Locale.all, :code, :name, @locale.code)
+  = select_tag :translation_option, options_from_collection_for_select(TranslationOption.all, :code, :description, @translation_option.code)
+  = submit_tag 'Go'
+%p
+  Textual Translation progress:
+  %span#translate_progress.progressBar= @locale.percentage_translated
+%h2
+  = @translation_option.description
+  \: #{@locale.name}
+- if @translations.empty?
+  %h3 No records for this criteria.
+- for translation in @translations
+  %div{:id => "translation_#{translation.class}_#{translation.id}"}
+    - remote_form_for([@locale, translation]) do |f|
+      %p= h translation.default_locale_value || translation.raw_key
+      %p
+        = f.text_field :value, :size => 128
+        = f.submit "Update"
+    %hr/

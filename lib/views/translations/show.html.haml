@@ -1,0 +1,21 @@
+%p
+  %b Locale:
+  = h @locale.code
+%p
+  %b Key:
+  = h @translation.key
+%p
+  %b Raw Key:
+  = h @translation.raw_key
+%p
+  %b Pluralization Index:
+  = h @translation.pluralization_index
+%p
+  %b Default Locale Value:
+  = h @translation.default_locale_value
+%p
+  %b Value:
+  = h @translation.value
+= link_to 'Edit', edit_locale_translation_path(@locale, @translation)
+|
+\#{link_to 'Back', locale_translations_path}

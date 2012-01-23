@@ -1,0 +1,21 @@
+%h1
+  Listing translations for #{@locale.code}
+%table
+  %tr
+    %th Key
+    %th Raw Key
+    %th Value
+    %th Default Locale Value
+  - for translation in @translations
+    %tr
+      %td= h translation.key
+      %td= h translation.raw_key
+      %td= h translation.value
+      %td= h translation.default_locale_value
+      %td= link_to 'Show', locale_translation_path(@locale, translation)
+      %td= link_to 'Edit', edit_locale_translation_path(@locale, translation)
+      %td= link_to 'Destroy', locale_translation_path(@locale, translation), :confirm => 'Are you sure?', :method => :delete
+%br/
+= link_to 'New translation', new_locale_translation_path
+|
+\#{link_to 'Back', locales_path}

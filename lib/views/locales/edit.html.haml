@@ -1,0 +1,16 @@
+%h1 Editing locale
+- form_for(@locale) do |f|
+  = f.error_messages
+  %p
+    = f.label :code
+    %br/
+    = f.text_field :code
+  %p
+    = f.label :name
+    %br/
+    = f.text_field :name
+  %p
+    = f.submit "Update"
+= link_to 'Show', @locale
+|
+\#{link_to 'Back', locales_path}
