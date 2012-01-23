@@ -3,7 +3,7 @@ $:.push File.expand_path("../lib", __FILE__)
 require "i18n_backend_database/version"
 
 Gem::Specification.new do |s|
-  s.name = %q{i18n_backend_database}
+  s.name = %q{i18n_backend_database_rails3}
 
   s.authors = ["Dylan Stamat", "Hector Bustillos"]
   s.date = %q{2012-01-23}
