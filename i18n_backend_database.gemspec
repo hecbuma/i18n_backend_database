@@ -11,7 +11,7 @@ Gem::Specification.new do |s|
   s.email = %w{hector.bustillos@crowdint.com}
   s.has_rdoc = false
   s.version     = I18n::Backend::Database::VERSION
-  s.homepage    = "https://hecbuma@github.com/hecbuma/i18n_backend_database.git"
+  s.homepage    = "http://hecbuma@github.com/hecbuma/i18n_backend_database"
   s.summary     = %q{Cool utils and admin for I18n}
 
   s.rubyforge_project = "compass-bootstrap"
